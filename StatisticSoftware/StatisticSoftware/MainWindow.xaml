@@ -1,0 +1,103 @@
+﻿<Window x:Class="StatisticSoftware.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StatisticSoftware"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="820">
+    <Grid>
+        <WrapPanel Orientation="Horizontal">
+            <StackPanel>
+                <TextBlock Text="Дані вибірки:" Width="200px" HorizontalAlignment="Left"/>
+                <ListView x:Name="DataList" Height="300" Background="White" Width="450px"
+                      HorizontalAlignment="Left">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=Position}" Width="150px">Позиція</GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=Country}" Width="150px">Країна</GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=Salary}" Width="150px">Зарплата</GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+
+                <TextBlock Text="Інтервальний статистиний розподіл:" Width="200px" HorizontalAlignment="Left"/>
+
+                <ListView x:Name="InStR" Height="200" Background="White" Width="450px"
+                      HorizontalAlignment="Left" Margin="0 10">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=Interval}" Width="150px">Інтервал</GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=Middle}" Width="150px">Середина інтервалу</GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=Count}" Width="150px">Кількість</GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </StackPanel>
+
+            <Separator />
+
+            <StackPanel Width="350" Height="584">
+                <WrapPanel Margin="5 10">
+                    <TextBlock Text="Розмах вибірки:" TextAlignment="Center" Width="100"
+                           HorizontalAlignment="Left"/>
+                    <TextBox x:Name="Rozmah" MinWidth="200" MaxWidth="250" IsReadOnly="True" Margin="5 0"/>
+                </WrapPanel>
+
+                <WrapPanel Margin="5 10">
+                    <TextBlock Text="Кількість інтервалів:" TextAlignment="Center" MinWidth="100"
+                           HorizontalAlignment="Left"/>
+                    <TextBox x:Name="Intervals" MinWidth="200" MaxWidth="250" IsReadOnly="True" Margin="5 0"/>
+                </WrapPanel>
+
+                <WrapPanel Margin="5 10">
+                    <TextBlock Text="Ширина інтервалу:" TextAlignment="Center" MinWidth="100"
+                           HorizontalAlignment="Left"/>
+                    <TextBox x:Name="WidthInterval" MinWidth="200" MaxWidth="250" IsReadOnly="True" Margin="5 0"/>
+                </WrapPanel>
+
+                <WrapPanel Margin="5 10">
+                    <TextBlock Text="Мода:" TextAlignment="Center" MinWidth="100"
+                           HorizontalAlignment="Left"/>
+                    <TextBox x:Name="Moda" MinWidth="200" MaxWidth="250" IsReadOnly="True" Margin="5 0"/>
+                </WrapPanel>
+
+                <WrapPanel Margin="5 10">
+                    <TextBlock Text="Медіана:" TextAlignment="Center" MinWidth="100"
+                           HorizontalAlignment="Left"/>
+                    <TextBox x:Name="Mediana" MinWidth="200" MaxWidth="250" IsReadOnly="True" Margin="5 0"/>
+                </WrapPanel>
+
+                <WrapPanel Margin="5 10">
+                    <TextBlock Text="Вибіркова дисперсія:" TextAlignment="Center" MinWidth="100"
+                           HorizontalAlignment="Left"/>
+                    <TextBox x:Name="Disp" MinWidth="200" MaxWidth="250" IsReadOnly="True" Margin="5 0"/>
+                </WrapPanel>
+
+                <WrapPanel Margin="5 10">
+                    <TextBlock Text="Середнє вибіркове:" TextAlignment="Center" MinWidth="100"
+                           HorizontalAlignment="Left"/>
+                    <TextBox x:Name="SV" MinWidth="200" MaxWidth="250" IsReadOnly="True" Margin="5 0"/>
+                </WrapPanel>
+
+                <WrapPanel Margin="5 10">
+                    <TextBlock Text="Коефіцієнт варіації:" TextAlignment="Center" MinWidth="100"
+                           HorizontalAlignment="Left"/>
+                    <TextBox x:Name="KF" MinWidth="200" MaxWidth="250" IsReadOnly="True" Margin="5 0"/>
+                </WrapPanel>
+
+                <StackPanel>
+                    <TextBlock Text="Графіки: " Margin="0 10" TextAlignment="Center"/>
+
+                    <Button x:Name="GenerateTable" Margin="0 10" Padding="20" Width="200" Click="GenerateTable_Click">Згенерувати таблицю</Button>
+                </StackPanel>
+
+                <StackPanel>
+                    <TextBlock Text="Перейти на наступну сторінку: " Margin="0 10" TextAlignment="Center"/>
+
+                    <Button x:Name="SecondLab" Margin="0 10" Padding="20" Width="200" Click="SecondLab_Click">Наступна сторінка</Button>
+                </StackPanel>
+            </StackPanel>
+        </WrapPanel>
+    </Grid>
+</Window>

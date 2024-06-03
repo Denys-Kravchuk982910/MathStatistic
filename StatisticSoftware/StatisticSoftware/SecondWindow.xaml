@@ -1,0 +1,88 @@
+﻿<Window x:Class="StatisticSoftware.SecondWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StatisticSoftware"
+        mc:Ignorable="d"
+        Title="Друга частина" Height="450" Width="800">
+    <Grid>
+        <WrapPanel>
+            <StackPanel Width="600" Height="450">
+                <WrapPanel Margin="5 10">
+                    <TextBlock Text="Незміщенна оцінка генерального середнього:" TextAlignment="Center" MinWidth="100"
+                           HorizontalAlignment="Left"/>
+                    <TextBox x:Name="AssessmentGenS" MinWidth="200" MaxWidth="250" IsReadOnly="True" Margin="5 0"/>
+                </WrapPanel>
+
+                <WrapPanel Margin="5 10">
+                    <TextBlock Text="Незміщенна оцінка генеральної дисперсії:" TextAlignment="Center" MinWidth="100"
+                           HorizontalAlignment="Left"/>
+                    <TextBox x:Name="AssessmentGenD" MinWidth="200" MaxWidth="250" IsReadOnly="True" Margin="5 0"/>
+                </WrapPanel>
+
+                <WrapPanel Margin="5 10">
+                    <TextBlock Text="Середня квадратична похибка:" TextAlignment="Center" MinWidth="100"
+                           HorizontalAlignment="Left"/>
+                    <TextBox x:Name="AvSqD" MinWidth="200" MaxWidth="250" IsReadOnly="True" Margin="5 0"/>
+                </WrapPanel>
+
+                <WrapPanel Margin="5 10">
+                    <TextBlock Text="Відповідне рівняння:" TextAlignment="Center" MinWidth="100"
+                           HorizontalAlignment="Left"/>
+                    <TextBox x:Name="Equation" MinWidth="350" MaxWidth="250" IsReadOnly="True" Margin="5 0"/>
+                </WrapPanel>
+
+                <WrapPanel Margin="5 10">
+                    <TextBlock Text="Середня квадратична похибка для середнього:" TextAlignment="Center" MinWidth="100"
+                           HorizontalAlignment="Left"/>
+                    <TextBox x:Name="AvSError" MinWidth="200" MaxWidth="250" IsReadOnly="True" Margin="5 0"/>
+                </WrapPanel>
+
+                <WrapPanel Margin="5 10">
+                    <TextBlock Text="Шуканий довірчий інтервал для середнього:" TextAlignment="Center" MinWidth="100"
+                           HorizontalAlignment="Left"/>
+                    <TextBox x:Name="TrustIntevalS" MinWidth="200" MaxWidth="250" IsReadOnly="True" Margin="5 0"/>
+                </WrapPanel>
+
+                <WrapPanel Margin="5 10">
+                    <TextBlock Text="Шуканий довірчий інтервал для ген. дисперсії:" TextAlignment="Center" MinWidth="100"
+                           HorizontalAlignment="Left"/>
+                    <TextBox x:Name="TrustIntevalD" MinWidth="200" MaxWidth="250" IsReadOnly="True" Margin="5 0"/>
+                </WrapPanel>
+
+                <WrapPanel Margin="5 10">
+                    <TextBlock Text="Гіпотеза H0:" TextAlignment="Center" MinWidth="100"
+                           HorizontalAlignment="Left"/>
+                    <TextBox x:Name="HZero" MinWidth="200" MaxWidth="250" IsReadOnly="True" Margin="5 0"/>
+                </WrapPanel>
+
+                <WrapPanel Margin="5 10">
+                    <TextBlock Text="Потужність критерію:" TextAlignment="Center" MinWidth="100"
+                           HorizontalAlignment="Left"/>
+                    <TextBox x:Name="PowerOfCriteria" MinWidth="200" MaxWidth="250" IsReadOnly="True" Margin="5 0"/>
+                </WrapPanel>
+
+                <WrapPanel Margin="5 10">
+                    <TextBlock Text="Мінімальний обсяг вибірки:" TextAlignment="Center" MinWidth="100"
+                           HorizontalAlignment="Left"/>
+                    <TextBox x:Name="MinRangeOfItems" MinWidth="200" MaxWidth="250" IsReadOnly="True" Margin="5 0"/>
+                </WrapPanel>
+
+                <WrapPanel Margin="5 10">
+                    <TextBlock Text="H0 про закон розподілу ген. сукупності:" TextAlignment="Center" MinWidth="100"
+                           HorizontalAlignment="Left"/>
+                    <TextBox x:Name="HGenRange" MinWidth="200" MaxWidth="250" IsReadOnly="True" Margin="5 0"/>
+                </WrapPanel>
+            </StackPanel>
+
+            <StackPanel>
+                <StackPanel>
+                    <TextBlock Text="Перейти на наступну сторінку: " Margin="0 10" TextAlignment="Center"/>
+
+                    <Button x:Name="SecondLab" Margin="0 10" Padding="20" MaxWidth="200" Click="SecondLab_Click">Наступна сторінка</Button>
+                </StackPanel>
+            </StackPanel>
+        </WrapPanel>
+    </Grid>
+</Window>
